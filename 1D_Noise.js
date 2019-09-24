@@ -7,8 +7,9 @@
 var noise1D = function(){
 	var MAX_VERT 		= 256;
 	var MAX_VERT_MASK	= MAX_VERT - 1;
-	var amplitude 		= 1;
+	var amplitude 		= 1.4;
 	var scale 			= 1;
+	var frequency 		= 2.5;
 	
 	var verts = [];
 	
@@ -25,6 +26,8 @@ var noise1D = function(){
 	* @return {number}
 	*/
 	var get = function(x){
+		x *= frequency;
+		
 		//initial values to find min, max and mid
 		var scaledX = x * scale;
 		var xFloor 	= Math.floor(scaledX);
@@ -45,17 +48,36 @@ var noise1D = function(){
 	//returning API to user
 	return{
 		get: get,
+		
 		setAmplitude: function(newAmplitude){
             amplitude = newAmplitude;
         },
+		
+		getAmplitude: function(){
+			return amplitude;
+		},
+		
         setScale: function(newScale){
             scale = newScale;
         },
+		
+		getScale: function(){
+			return scale;
+		},
+		
+		setFrequency: function(newFreq){
+			frequency = newFreq;
+		},
+		
+		getFrequency: function(){
+			return frequency;
+		},
+		
 		reset: function(){
 			verts = [];
 			for ( var i = 0; i < MAX_VERTICES; ++i ){
 				verts.push(Math.random());
 			}
-		}
+		},
 	}
 }
