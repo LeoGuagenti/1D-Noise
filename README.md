@@ -1,6 +1,6 @@
 # 1D-Noise
 ## Description
-A javascript object capable of returning a smooth noise values between 0 and 1 for regular intervals of input.<br>
+A javascript object capable of returning a smooth noise value between 0 and 1 for regular intervals of input.<br>
 Example: `1, 2, 3, 4, ...` or `5, 10, 15, 20, ...`
 ## Installation
 To use this object, simply include the `1D_Noise.js` as a script source in your html document.<br>
